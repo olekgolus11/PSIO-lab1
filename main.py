@@ -34,6 +34,7 @@ def split_and_shuffle_blocks(n_cuts, img):
             shuffled_image[j * block_size:(j + 1) * block_size, i * block_size:(i + 1) * block_size] = blocks.pop(0)
     return shuffled_image
 
+
 def put_image_on_canvas(img, canvas):
     img_height = img.shape[0]
     img_width = img.shape[1]
@@ -53,8 +54,8 @@ the_rock_original = io.imread('./The_Rock.jpg')
 the_rock_flip_ud = the_rock_original[::-1, :]
 the_rock_flip_lr = the_rock_original[:, ::-1]
 the_rock_gray = rgb2gray(the_rock_original)
-the_rock_rot_90l = the_rock_gray.T
-the_rock_rot_90r = the_rock_gray.T[:, ::-1][::-1, :]
+the_rock_rot_90l = the_rock_gray.T[::-1, :]
+the_rock_rot_90r = the_rock_gray.T[:, ::-1]
 [img_square_pad, img_square_crop] = squareify(the_rock_original)
 
 # ZAD 2
